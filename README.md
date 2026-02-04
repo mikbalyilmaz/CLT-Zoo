@@ -1,11 +1,13 @@
 # clt-zoo
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-An interactive simulation that visualizes the **Law of Large Numbers (LLN)** and the **Central Limit Theorem (CLT)** across a wide range of probability distributions.  
-The notebook renders three coordinated panels:  
-(1) the running mean,  
-(2) the sampling distribution of the sample mean, and  
-(3) the standardized mean.
+An interactive simulation designed to visualize the **Law of Large Numbers (LLN)** and the **Central Limit Theorem (CLT)** across a wide range of probability distributions.  
+The project aims to provide intuition for these foundational results by examining their behavior in finite samples through Monte Carlo simulation.
+
+The notebook displays three coordinated panels:
+1. the running mean (LLN),
+2. the sampling distribution of the sample mean,
+3. the standardized sample mean.
 
 ---
 
@@ -16,7 +18,7 @@ The notebook renders three coordinated panels:
   $$
   \bar X_n=\frac{1}{n}\sum_{i=1}^n X_i
   $$
-  stabilizes around the population mean $\mu$ as the sample size $n$ increases.
+  converges toward the population mean $\mu$ as the sample size $n$ increases.
 
 - **Central Limit Theorem (sampling distribution):**  
   For a fixed sample size $N$, repeated sample means satisfy
@@ -42,11 +44,11 @@ The notebook renders three coordinated panels:
   Bernoulli, Binomial, Poisson, Geometric, Negative Binomial.
 
 - **Fully interactive:**  
-  Change the distribution, its parameters, sample size ($N$), number of Monte Carlo replications ($M$), and random seed using sliders.
+  Users can change the underlying distribution, its parameters, sample size ($N$), number of Monte Carlo replications ($M$), and random seed via interactive widgets.
 
 - **Three-panel visualization:**  
   1. Running mean (LLN)  
-  2. Sampling distribution of $\bar X_N$ with CLT Normal overlay  
+  2. Sampling distribution of $\bar X_N$ with Normal (CLT) overlay  
   3. Standardized mean with $\mathcal N(0,1)$ overlay
 
 - **Theory-aware behavior:**  
