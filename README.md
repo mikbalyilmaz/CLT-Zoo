@@ -1,25 +1,36 @@
 # clt-zoo
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-An interactive simulation that visualizes the **Law of Large Numbers (LLN)** and the **Central Limit Theorem (CLT)** across many probability distributions.  
-The notebook renders three coordinated panels: (1) running mean, (2) sampling distribution of the sample mean, and (3) standardized mean.
+An interactive simulation that visualizes the **Law of Large Numbers (LLN)** and the **Central Limit Theorem (CLT)** across a wide range of probability distributions.  
+The notebook renders three coordinated panels:  
+(1) the running mean,  
+(2) the sampling distribution of the sample mean, and  
+(3) the standardized mean.
 
 ---
 
 ## What it shows
 
-- **LLN (single path):**  
+- **Law of Large Numbers (single path):**  
   The running mean
-  $$\bar X_n=\frac{1}{n}\sum_{i=1}^n X_i$$
-  stabilizes around the population mean $\mu$ as $n$ increases.
+  $$
+  \bar X_n=\frac{1}{n}\sum_{i=1}^n X_i
+  $$
+  stabilizes around the population mean $\mu$ as the sample size $n$ increases.
 
-- **CLT (sampling distribution):**  
-  For fixed $N$, repeated sample means satisfy
-  $$\bar X_N \approx \mathcal N\!\left(\mu,\frac{\sigma^2}{N}\right)$$
-  whenever the variance is finite.
+- **Central Limit Theorem (sampling distribution):**  
+  For a fixed sample size $N$, repeated sample means satisfy
+  $$
+  \bar X_N \approx \mathcal N\!\left(\mu,\frac{\sigma^2}{N}\right)
+  $$
+  whenever the population variance is finite.
 
 - **Standardized mean:**  
-  $$Z_N=\frac{\sqrt{N}(\bar X_N-\mu)}{\sigma} \Rightarrow \mathcal N(0,1)$$
+  $$
+  Z_N=\frac{\sqrt{N}(\bar X_N-\mu)}{\sigma}
+  \;\Rightarrow\;
+  \mathcal N(0,1),
+  $$
   illustrating the classical CLT in its normalized form.
 
 ---
@@ -27,25 +38,28 @@ The notebook renders three coordinated panels: (1) running mean, (2) sampling di
 ## Key Features
 
 - **Distribution zoo:**  
-  Normal, Uniform, Exponential, Gamma, Beta, Lognormal, Laplace, Student-t, Pareto, Bernoulli, Binomial, Poisson, Geometric, Negative Binomial.
+  Normal, Uniform, Exponential, Gamma, Beta, Lognormal, Laplace, Student-t, Pareto, Chi-square, F,  
+  Bernoulli, Binomial, Poisson, Geometric, Negative Binomial.
 
 - **Fully interactive:**  
-  Change distribution, parameters, sample size ($N$), repetitions ($M$), and seed via sliders.
+  Change the distribution, its parameters, sample size ($N$), number of Monte Carlo replications ($M$), and random seed using sliders.
 
-- **Three-panel view:**  
+- **Three-panel visualization:**  
   1. Running mean (LLN)  
-  2. Sampling distribution of $\bar X_N$ + CLT Normal overlay  
-  3. Standardized mean + $\mathcal N(0,1)$ overlay
+  2. Sampling distribution of $\bar X_N$ with CLT Normal overlay  
+  3. Standardized mean with $\mathcal N(0,1)$ overlay
 
-- **Theory-aware:**  
-  Normal overlays and standardization are automatically disabled when mean or variance is infinite.
+- **Theory-aware behavior:**  
+  Normal approximations and standardization are automatically disabled when the population mean or variance is infinite (e.g. heavy-tailed distributions).
 
 ---
 
 ## Requirements
 
 - Python ≥ 3.9  
-- `numpy`, `matplotlib`, `ipywidgets`
+- `numpy`  
+- `matplotlib`  
+- `ipywidgets`
 
 ```bash
 pip install numpy matplotlib ipywidgets
